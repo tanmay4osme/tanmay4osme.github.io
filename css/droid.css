@@ -1,0 +1,93 @@
+
+.left-arm, .right-arm, .antenna:before, .antenna:after, .head, .droid-body, .left-leg, .right-leg { background:#A4C639; }
+.left-arm, .right-arm, .left-leg, .right-leg, .droid { float:left; }
+
+.android-container { width:200px; margin:20px auto; animation:droid-rotate 2s ease-in-out infinite; transform-origin:bottom left; }
+
+@keyframes droid-rotate {
+  0%,100%{ transform:rotate(0); }
+  25%,75%{ transform:rotate(-5deg); }
+}
+
+.droid {
+  width:125px;
+  height:165px;
+  margin:0 auto;
+}
+
+.left-arm, .right-arm {
+  width:25px;
+  height:65px;
+  border-radius:15px;
+  margin:105px 5px 0;
+  transform-origin:center 12.5px;
+}
+.left-arm { 
+	animation:arm-dangle 2s ease-in-out infinite;
+}
+@keyframes arm-dangle { 
+  0%,100%{ transform:rotate(0): }
+  50%{ transform:rotate(6deg); }
+  25%,75%{ transform:rotate(13deg); }
+}
+
+.right-arm { 
+  animation:wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%,100%{ transform:rotate(0); }
+  25%,50%,75%{ transform:rotate(-125deg); }
+  40%,60%{ transform:rotate(-165deg) translateY(3px); }
+}
+
+.antenna:before, .antenna:after {
+  display:inline-block;
+  content:"";
+  width:3px;
+  height:20px;
+  margin:25px 15px -10px 35px;
+  transform-origin:center bottom;
+  border-radius:3px;
+}
+.antenna:before { transform:rotate(-30deg); }
+.antenna:after { transform:rotate(30deg); }
+
+.head {
+	width:125px;
+  height:60px;
+  border-radius:60px 60px 0 0;
+  margin-bottom:5px;
+}
+
+/* Eyes */
+.head:after, .head:before {
+  display:inline-block;
+  content:"";
+  width:10px;
+  height:10px;
+  background:#eee;
+  border-radius:50%;
+  margin:25px 0 0 32px;
+}
+.head:after { margin-left:40px; } /* Right eye */
+
+.droid-body {
+  width:125px;
+  height:100px;
+  border-radius:0 0 15px 15px;
+}
+
+.left-leg, .right-leg {
+  width:25px;
+  height:50px;
+  margin:-10px 0 0 25px;
+  border-radius:0 0 15px 15px;
+  transform-origin:center top;
+}
+.left-leg {  animation:leg 2s ease-in-out infinite; }
+
+@keyframes leg {
+ 	0%,100%{ transform:rotate(0); }
+  25%,75%{ transform:rotate(10deg) translateY(2px); }
+}
